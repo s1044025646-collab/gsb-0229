@@ -1,0 +1,26 @@
+{
+  "name": "tennis-score",
+  "version": "1.0.0",
+  "description": "本地网球逐分计分与撤销回放后端（API + CLI）",
+  "type": "module",
+  "main": "dist/cli/index.js",
+  "bin": {
+    "tennis": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --experimental-sqlite dist/server/index.js",
+    "dev": "node --experimental-sqlite --import tsx src/server/index.ts",
+    "test": "node --experimental-sqlite --import tsx --test tests/*.test.ts",
+    "demo": "node --experimental-sqlite --import tsx demos/demo.ts",
+    "cli": "node --experimental-sqlite --import tsx src/cli/index.ts"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0"
+  }
+}

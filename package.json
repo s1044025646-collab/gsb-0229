@@ -1,0 +1,20 @@
+{
+  "name": "tennis-score-backend",
+  "version": "1.0.0",
+  "description": "本地网球单打逐分计分、撤销与回放后端（API + CLI）",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "tennis": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"dist/__tests__/**/*.test.js\"",
+    "start": "npm run build && node dist/cli.js serve",
+    "demo": "npm run build && node dist/cli.js demo"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "typescript": "^5.8.0"
+  }
+}
